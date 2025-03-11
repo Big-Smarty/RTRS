@@ -1,0 +1,34 @@
+cargo-features = ["edition2024"]
+
+[package]
+name = "rtrs"
+version = "0.1.0"
+edition = "2024"
+
+#[profile.dev]
+#opt-level = 1
+
+# Compile build-dependencies in release mode with
+# the same settings as regular dependencies.
+[profile.release.build-override]
+opt-level = 3
+codegen-units = 16
+[profile.dev.build-override]
+opt-level = 3
+
+[build-dependencies]
+spirv-builder = {git = "https://github.com/rust-gpu/rust-gpu"}
+
+[dependencies]
+vulkano = "0.35"
+apecs = "0.8"
+log = "0.4"
+simplelog = "0.12"
+crossterm = "0.28"
+ratatui = "0.29"
+tokio = {version = "1", features = ["full"]}
+ratatui-image = "4"
+image = "0.25"
+glam = {version = "0.30", features = ["fast-math"]}
+rayon = "1"
+chrono = "0.4"
