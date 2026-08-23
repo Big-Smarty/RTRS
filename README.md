@@ -1,2 +1,2 @@
 # RTRS
-Raytracing in (more than a) weekend in rust
+Raytracing in (more than a) weekend in Rust

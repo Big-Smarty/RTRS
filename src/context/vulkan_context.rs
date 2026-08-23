@@ -88,7 +88,6 @@ impl Default for VulkanContext {
         let (device, mut queues) = Device::new(
             physical_device,
             DeviceCreateInfo {
-                // here we pass the desired queue family to use by index
                 queue_create_infos: vec![QueueCreateInfo {
                     queue_family_index,
                     ..Default::default()
